@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau使用教學</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+        }
+        .section {
+            margin-bottom: 40px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tip {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+        .numbered-item {
+            margin-bottom: 15px;
+        }
+        .numbered-item strong {
+            color: #2980b9;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .menu {
+            position: sticky;
+            top: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu h3 {
+            margin-top: 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        .menu li {
+            margin-bottom: 8px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .submenu {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tableau使用教學</h1>
+    
+    <!-- <div class="menu">
+        <h3>目錄</h3>
+        <ul>
+            <li><a href="#intro">零、使用前說明</a></li>
+            <li>
+                <a href="#filter">篩選器使用</a>
+                <ul class="submenu">
+                    <li><a href="#date-filter">日期篩選器</a></li>
+                    <li><a href="#id-filter">玩家ID篩選器</a></li>
+                    <li><a href="#dropdown-filter">下拉式清單</a></li>
+                    <li><a href="#line-chart">折線圖顯示</a></li>
+                </ul>
+            </li>
+            <li><a href="#dimension">維度的使用</a></li>
+            <li>
+                <a href="#betting">一、押注</a>
+                <ul class="submenu">
+                    <li><a href="#slot-overall">老虎機整體押注</a></li>
+                    <li><a href="#slot-machine">老虎機各機台狀況</a></li>
+                    <li><a href="#fish-overall">魚機整體押注</a></li>
+                    <li><a href="#fish-type">各魚種狀況</a></li>
+                    <li><a href="#fish-hall">魚機各廳館狀況</a></li>
+                    <li><a href="#top20">Top20押注</a></li>
+                    <li><a href="#platform-rtp">平台RTP</a></li>
+                </ul>
+            </li>
+            <li><a href="#revenue">二、營收</a></li>
+        </ul>
+    </div> -->
+
+    <div class="section" id="intro">
+        <h2>零、使用前說明</h2>
+        <p>儀表板主要分三部分：工作列、篩選器、主要資料</p>
+        <img src="C:/Users/chiahaowang/Pictures/儀錶板示意圖.png" alt="工作列示意圖">
+        <p>左上方工作列可回到上一步或是暫停資料更新</p>
+        <img src="C:/Users/chiahaowang/Pictures/暫停資料更新.png" alt="工作列示意圖">
+        
+        <div class="tip">
+            <p>在調整篩選條件時，每調整一次就需要重新載入資料，因此需調整多個篩選條件時，<strong>建議先點選左上角暫停資料更新，調整完篩選條件再恢復更新</strong></p>
+            <img src="C:/Users/chiahaowang/Pictures/暫停更新.png" alt="工作列示意圖">
+            <img src="C:/Users/chiahaowang/Pictures/繼續更新.png" alt="工作列示意圖">
+        </div>
+        
+        <p>可從工作列右方下載原始數據，若該頁面有多張表，則選擇需要下載的表，建議存為CSV格式。</p>
+        <img src="C:/Users/chiahaowang/Pictures/下載表.png" alt="工作列示意圖">
+        <img src="C:/Users/chiahaowang/Pictures/存成csv.png" alt="工作列示意圖">
+    </div>
+
+    <div class="section" id="filter">
+        <h2>篩選器使用</h2>
+        
+        <div class="numbered-item" id="date-filter">
+            <h3>1. 日期篩選器</h3>
+            <p>分為兩種：</p>
+            <ul>
+                <li>第一種為<strong>日期範圍</strong>，可自由選擇開始及結束時間</li>
+                <li>第二種為<strong>相對日期</strong>，可選擇過去幾天或上個月</li>
+            </ul>
+            <img src="C:/Users/chiahaowang/Pictures/日期篩選器1.png" alt="日期篩選器示意圖">
+            <img src="C:/Users/chiahaowang/Pictures/日期篩選器2.png" alt="日期篩選器示意圖">
+        </div>
+        
+        <div class="numbered-item" id="id-filter">
+            <h3>2. 玩家ID篩選器</h3>
+            <p>可選擇要包含或排除輸入的ID，若有多個ID要輸入時可從Excel直接複製整串名單貼上</p>
+            <p>輸入完ID按下加號即可</p>
+            <img src="C:/Users/chiahaowang/Pictures/UserID篩選器.png" alt="玩家ID篩選器示意圖">
+            <img src="C:/Users/chiahaowang/Pictures/UserID篩選器2.png" alt="玩家ID篩選器示意圖">
+        </div>
+        
+        <div class="numbered-item" id="dropdown-filter">
+            <h3>3. 下拉式清單</h3>
+            <p>可自由選擇多個條件</p>
+            <div class="tip">
+                <p>若需一次選擇較多數量時，可先暫停資料更新，透過Shift選擇多個值</p>
+            </div>
+            <img src="C:/Users/chiahaowang/Pictures/下拉式清單.png" alt="玩家ID篩選器示意圖">
+        </div>
+        
+        <div class="numbered-item" id="line-chart">
+            <h3>4. 在看折線圖時若太多條線導致要看的顏色不好找時</h3>
+            <p>可以點擊該顏色的圖示，顯示出想看的顏色</p>
+            <img src="C:/Users/chiahaowang/Pictures/圖例.png" alt="玩家ID篩選器示意圖">
+        </div>
+    </div>
+
+    <div class="section" id="dimension">
+        <h2>維度的使用</h2>
+        <p>當在觀看資料時需要分類(例如分客群、平台等)，可透過選擇維度來進行分類，維度不像篩選器是排除或保留某些資料，而是將所有資料進行分類</p>
+        <img src="C:/Users/chiahaowang/Pictures/維度使用.png" alt="玩家ID篩選器示意圖">
+        <img src="C:/Users/chiahaowang/Pictures/維度使用2.png" alt="玩家ID篩選器示意圖">
+    </div>
+
+    <!-- <div class="section" id="betting">
+        <h2>一、押注</h2>
+        <img src="/api/placeholder/600/300" alt="押注總覽">
+        
+        <div class="subsection" id="slot-overall">
+            <h3>老虎機整體押注</h3>
+            <p>可看到三個部分：押注明細、贏分占比、各指標折線圖</p>
+            <p>預設顯示US 100等以上玩家資料，若要調整篩選條件可以先點選左上角暫停資料更新，調整完篩選條件再恢復資料更新，可看近60天</p>
+            <img src="/api/placeholder/600/300" alt="老虎機整體押注示意圖">
+        </div>
+        
+        <div class="subsection" id="slot-machine">
+            <h3>老虎機各機台狀況</h3>
+            <p>預設顯示US 100等以上，用來觀察各機台指標，也可輸入玩家ID查看單一玩家遊玩情況(偏好的機台等)，可看近60天</p>
+            <img src="/api/placeholder/600/300" alt="老虎機各機台狀況示意圖">
+        </div>
+        
+        <div class="subsection" id="fish-overall">
+            <h3>魚機整體押注</h3>
+            <p>用於觀察魚機整體各項指標，預設為US 100等以上，可看近45天</p>
+            <img src="/api/placeholder/600/300" alt="魚機整體押注示意圖">
+        </div>
+        
+        <div class="subsection" id="fish-type">
+            <h3>各魚種狀況</h3>
+            <p>各魚種押注狀況，可看近30天</p>
+            <img src="/api/placeholder/600/300" alt="各魚種狀況示意圖">
+        </div>
+        
+        <div class="subsection" id="fish-hall">
+            <h3>魚機各廳館狀況</h3>
+            <p>可看各廳館押住量及押注占比，可看近45天資料</p>
+            <img src="/api/placeholder/600/300" alt="魚機各廳館狀況示意圖">
+        </div>
+        
+        <div class="subsection" id="top20">
+            <h3>Top20押注</h3>
+            <p>分老虎機及魚機各客群每日押注前20名玩家</p>
+            <img src="/api/placeholder/600/300" alt="Top20押注示意圖">
+        </div>
+        
+        <div class="subsection" id="platform-rtp">
+            <h3>平台RTP</h3>
+            <p>用於觀察各客群的平台RTP(含周邊產出及免費、付費金幣)</p>
+            <img src="/api/placeholder/600/300" alt="平台RTP示意圖">
+            <img src="/api/placeholder/600/300" alt="平台RTP詳細示意圖">
+        </div>
+    </div>
+
+    <div class="section" id="revenue">
+        <h2>二、營收</h2>
+        <p>營收相關數據分析</p>
+        <img src="/api/placeholder/600/300" alt="營收示意圖">
+        <p class="note">注：文檔中未提供營收部分的詳細說明</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tableau使用教學</p>
+    </footer> -->
+</body>
+</html>
