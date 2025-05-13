@@ -100,6 +100,9 @@
         <h2>零、使用前說明</h2>
         <p>儀表板主要分三部分：工作列、篩選器、主要資料</p>
         <img src="images/儀錶板示意圖.png" alt="儀錶板示意圖">
+
+        <p>資料來源分為<strong>即時</strong>跟<strong>擷取</strong>，擷取的資料可以從儀表板查看資料最後更新時間</p>
+        <img src="images/擷取時間.png" alt="擷取時間">
     </div>
 
     <div class="section" id="work">
@@ -112,6 +115,9 @@
             <img src="images/暫停更新.png" alt="暫停更新">
             <img src="images/繼續更新.png" alt="繼續更新">
         </div>
+
+        <p>使用即時資料源時，若想看最新的資料，可以點擊工作列的重新整理。</p>
+        <img src="images/更新資料.png" alt="更新資料">
         
         <p>可從工作列右方下載原始數據，若該頁面有多張表，則選擇需要下載的表，建議存為CSV格式。</p>
         <img src="images/下載表.png" alt="下載表">
@@ -133,8 +139,8 @@
         </div>
         
         <div class="numbered-item" id="id-filter">
-            <h3>2. 玩家ID篩選器</h3>
-            <p>可選擇要包含或排除輸入的ID，若有多個ID要輸入時可從Excel直接複製整串名單貼上</p>
+            <h3>2. 自訂清單</h3>
+            <p>通常用於篩選玩家ID，可選擇要包含或排除ID，若有多個ID要輸入時可直接複製整串名單貼上(每個ID之間需換行)</p>
             <p>輸入完ID按下加號即可</p>
             <img src="images/UserID篩選器.png" alt="UserID篩選器">
             <img src="images/UserID篩選器2.png" alt="UserID篩選器2">
@@ -157,10 +163,15 @@
     </div>
 
     <div class="section" id="dimension">
-        <h2>三、維度的使用</h2>
-        <p>當在觀看資料時需要分類(例如分客群、平台等)，可透過選擇維度來進行分類，維度不像篩選器是排除或保留某些資料，而是將所有資料進行分類</p>
-        <img src="images/維度使用.png" alt="維度使用">
-        <img src="images/維度使用2.png" alt="維度使用2">
+        <h2>三、維度及參數的使用</h2>
+            <h3>1. 維度</h3>
+            <p>當在觀看資料時需要分類(例如分客群、平台等)，可透過選擇維度來進行分類，維度不像篩選器是排除或保留某些資料，而是將所有資料進行分類</p>
+            <img src="images/維度使用.png" alt="維度使用">
+            <img src="images/維度使用2.png" alt="維度使用2">
+
+            <h3>2. 參數</h3>
+            <p>儀表板中有的數據可透過使用者輸入參數來改變，例如想看不同長度的留存時，可以改變天數來觀察</p>
+            <img src="images/參數使用.png" alt="參數使用">
     </div>
 
     <div class="section" id="rawdata">
@@ -168,6 +179,9 @@
         <p>當在觀看主要資料時，若想知道更詳細資料(例如看到禮包有11人購買，想知道購買者的UserID)，可以點開詳細資料查看</p>
         <img src="images/詳細資料1.png" alt="詳細資料1">
         <img src="images/詳細資料2.png" alt="詳細資料2">
+
+        <p>有多個欄位想看，也可一次選擇多個值，再點進詳細資料，同時也可以看到多個值加總的結果</p>
+        <img src="images/詳細資料3.png" alt="詳細資料3">
     </div>
 
 </body>
